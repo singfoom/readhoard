@@ -6,6 +6,8 @@ defmodule Readhoard.Book do
   use Ecto.Schema
   import Ecto.Changeset
 
+  alias Readhoard.Author
+
   @type t :: %__MODULE__{
           title: String.t(),
           genre: String.t(),
@@ -18,7 +20,7 @@ defmodule Readhoard.Book do
     field :title, :string
     field :word_count, :integer
     field :genre, :string
-
+    belongs_to :author, Author, type: :string
     timestamps(type: :utc_datetime)
   end
 

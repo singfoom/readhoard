@@ -3,6 +3,7 @@ defmodule Readhoard.Author do
   The author schema represents an author of one or
   more books.
   """
+
   use Ecto.Schema
   import Ecto.Changeset
 
