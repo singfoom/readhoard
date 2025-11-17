@@ -1,6 +1,6 @@
 defmodule Readhoard.Book do
   @moduledoc """
-  The book schema represents a a book record.
+  The book schema represents a book.
   """
 
   use Ecto.Schema
@@ -13,6 +13,7 @@ defmodule Readhoard.Book do
         }
 
   @primary_key {:book_id, UXID, autogenerate: true, prefix: "bk", size: :medium}
+  @derive {Phoenix.Param, key: :book_id}
   schema "books" do
     field :title, :string
     field :word_count, :integer
