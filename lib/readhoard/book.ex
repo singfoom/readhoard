@@ -27,7 +27,8 @@ defmodule Readhoard.Book do
   @doc false
   def changeset(book, attrs) do
     book
-    |> cast(attrs, [:title, :word_count, :genre])
+    |> cast(attrs, [:title, :word_count, :genre, :author_id])
+    |> cast_assoc(:author)
     |> validate_required([:title])
   end
 end

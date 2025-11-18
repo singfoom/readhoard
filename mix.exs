@@ -48,6 +48,7 @@ defmodule Readhoard.MixProject do
       {:esbuild, "~> 0.10", runtime: Mix.env() == :dev},
       {:ex_machina, "~> 2.8.0", only: :test},
       {:excellent_migrations, "~> 0.1", only: [:dev, :test], runtime: false},
+      {:faker, "~> 0.19.0-alpha.1", only: :test},
       {:gettext, "~> 0.26"},
       {:heroicons,
        github: "tailwindlabs/heroicons",
