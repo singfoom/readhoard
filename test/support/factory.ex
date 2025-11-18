@@ -5,6 +5,8 @@ defmodule Readhoard.Factory do
   use ExMachina.Ecto, repo: Readhoard.Repo
   alias Readhoard.{Author, Book}
 
+  alias Readhoard.Accounts.User
+
   def book_factory do
     %Book{
       title:
@@ -41,6 +43,15 @@ defmodule Readhoard.Factory do
           "Robinson",
           "VanderMeer"
         ])
+    }
+  end
+
+  def user_factory do
+    %User{
+      email: sequence(:email, &"user#{&1}@example.com"),
+      hashed_password: Bcrypt.hash_pwd_salt("password123"),
+      first_name: Enum.random(["Alice", "Bob", "Carol", "David", "Eve", "Frank"]),
+      last_name: Enum.random(["Smith", "Johnson", "Williams", "Brown", "Jones", "Garcia"])
     }
   end
 end
